@@ -1,10 +1,12 @@
 import React from 'react'
 import * as S from './styled'
+import Image from '../../../public/image/gb.jpg'
+
 
 export const Home = () => {
   return (
     <S.HomeContainer>
-      <S.ImageHome> IMAGE </S.ImageHome>
+      <S.ImageHome src={Image} />
 
       <S.FormHome action="#">
         <h2>Acessar Cadastro</h2>
