@@ -1,0 +1,58 @@
+[
+  {
+    "login": {
+      "access": "050.871.031-74",
+      "senha": "050874",
+      "client": {
+        "name":"Eziel Pereira da Silva",
+        "telefone": "(66)999719567 ",
+        "email": "ezielp10@hotmail.com",
+        "endereco":{
+          "rua":" RUA BRAZ CLARO DOS ANJOS, 3161",
+          "bairro":"Jardim dos Ipes",
+          "cidade": "Sinop",
+          "estado":"MT",
+          "complemento":""
+        }
+      },
+      "planos": [
+        {
+          "0 - GB 500 MEGAS C/F / RESIDENCIAL": {
+            "info":{
+              "login": "eziel87070@gbonline.com.br  "
+            },
+            "status": "Ativo",
+            "contratos": {
+              "ativacao": "URL",
+              "upgrade":"URL"
+            },
+            "faturas": [
+              {
+              "vencimento": "",
+              "boleto": "URL"
+              }
+          ]
+          }
+        },
+        {
+          "1 - COMBO TV 72 CANAIS C/F / ": {
+            "info":{
+              "login": "eziel87070@gbonline.com.br  "
+            },
+            "status": "Ativo",
+            "contratos": {
+              "ativacao": "URL",
+              "upgrade":"URL"
+            },
+            "faturas": [
+              {
+              "vencimento": "",
+              "boleto": "URL"
+              }
+            ]
+          }
+        }
+      ] 
+    }
+  }
+]

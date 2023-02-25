@@ -1,12 +1,14 @@
-import { Home } from "./pages/home"
-import { GlobalStyled } from "./styles/global"
+// import { Access } from "./pages/access"
+import { Client } from "./pages/client"
+import { Global } from "./styles/global"
+
 
 function App() {
 
   return (
     <>
-    <GlobalStyled />
-    <Home />
+      <Global />
+      <Client />
     </>
   )
 }
