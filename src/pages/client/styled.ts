@@ -6,7 +6,8 @@ export const ClienteConteiner = styled.main`
   height: 100vh;
   padding-top: 3rem;
 
-  background: red;
+  background: linear-gradient(135deg, #254ACD, #5C7DD2 );
+
 
   display: flex;
   gap: 4rem;
@@ -20,7 +21,7 @@ export const ClientInfo = styled.section`
   justify-content: space-between;
   align-items: start;
   padding:  2rem;
-  background-color: blue;
+  background-color: #255bda;
 
   border-radius: 10px;
   width: 80%;
@@ -42,11 +43,15 @@ export const SelectPlan = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  color: #0F076D;
+  font-weight: 600;
+
 
   span {
-    background: blue ;
+    background: #D9D9D9 ;
     border-radius: 8px;
     padding: 0.75rem;
+    cursor: pointer;
   }
 `
 
@@ -54,20 +59,22 @@ export const NavMenu = styled.nav`
   margin-top: 2rem;
   width: 80%;
   border-radius: 8px;
-  
+  color: #0F076D;
+
   ul {
     border-radius: 8px;
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     
-    background: blue;
-
     li {
-      padding: 0.5rem;
-      background: tomato;
+      padding: 0.5rem 1rem;
       border-radius: 8px;
+      background: #D9D9D9 ;
+      color: #0F076D;
+      font-weight: 500;
+      cursor: pointer;
     }
   }
 `

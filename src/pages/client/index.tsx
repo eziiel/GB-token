@@ -21,10 +21,10 @@ export const Client = () => {
 
       <S.NavMenu>
         <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
+          <li>Extratos Financeiros</li>
+          <li>Boletos</li>
+          <li>Notas Fiscais</li>
+          <li>Atendimentos</li>
         </ul>
       </S.NavMenu>
 
