@@ -1,61 +1,41 @@
 import React from "react"
+import { AuthContext } from "../../context/autContext"
 import { HomeAccess, HomeForm } from "./styled"
+import { useNavigate } from "react-router-dom";
 
 export const Access = () => {
-  const [client, setClient] = React.useState({
-    login: '',
-    senha: ''
-  })
+  const [login, setLogin] = React.useState('')
+  const [password, setPassword] = React.useState('')
 
-  function HandleClient(event:any) {
-    if(event.target.type === 'text') {
+  const { signIn } = React.useContext(AuthContext)
 
-      let novoLogin = {
-        login: event.target.value,
-        senha: client.senha,
-      }
-
-      setClient(previus => previus = novoLogin)
-    } else {
-     
-      let novoLogin = {
-        login: client.login,
-        senha: event.target.value,
-      }
-
-      setClient(previus => previus = novoLogin)
+  const HandleSubmit = (event:React.FormEvent) => {
+    event.preventDefault()
+    const data = {
+      login: login,
+      password: password,
     }
+    
+   signIn(data)
   }
-  
-
-  const handleForm = (event:any) => {
-    event.preventDefault();
-
-    console.log(client)
-
-    if(!client.login || !client.senha) {
-      alert("Tu é leigo???")
-    }
-  }
-
 
 
   return (
     <HomeAccess> 
-      <HomeForm onSubmit={handleForm}>  
+      <HomeForm onSubmit={HandleSubmit}>  
         <h1>Acessar minha conta</h1>
 
         <input 
           type="text" 
           placeholder="CPF ou CNPJ" 
-          onChange={HandleClient}
-          value={client.login}
+          onChange={e => setLogin(e.target.value)}
+          value={login}
           />
         <input 
           type="password" 
           placeholder="SENHA" 
-          onChange={HandleClient}
-          value={client.senha}/>
+          onChange={e => setPassword(e.target.value)}
+          value={password}/>
 
         <button type="submit"> Entrar </button>
       </HomeForm>

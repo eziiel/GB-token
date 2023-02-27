@@ -1,5 +1,7 @@
 import React from 'react'
+import { SelectPlan } from '../../assets/SelectPlan/selectPlan'
 import * as S from './styled'
+
 
 export const Client = () => {
   return (
@@ -14,10 +16,11 @@ export const Client = () => {
         </div>
       </S.ClientInfo>
 
-      <S.SelectPlan>
+      <S.PlanClient>
         <h2>Planos:</h2>
-        <span>PLANO 0</span>
-      </S.SelectPlan>
+
+        <SelectPlan />
+      </S.PlanClient>
 
       <S.NavMenu>
         <ul>

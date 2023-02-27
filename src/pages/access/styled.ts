@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const HomeAccess = styled.div`
-  width: 30%;
+  width: 500px;
+  left: 0;
   height: 100vh;
-  
-  background: linear-gradient(115deg, #5C7DD2, #5C7DD6, #5C7DD210);
+  padding-top: 3rem;
+
+  background: linear-gradient(135deg, #254ACD, #5C7DD2 );
 
   display: flex;
   justify-content: center;

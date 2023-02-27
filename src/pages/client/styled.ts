@@ -10,7 +10,7 @@ export const ClienteConteiner = styled.main`
 
 
   display: flex;
-  gap: 4rem;
+  gap: 3rem;
   flex-direction: column;
   align-items: center;
 `
@@ -38,25 +38,23 @@ export const ClientInfo = styled.section`
   }
 `
 
-export const SelectPlan = styled.div`
+export const PlanClient = styled.div`
   width: 80%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  color: #0F076D;
-  font-weight: 600;
+  align-items: top;
 
-
-  span {
+  /* button {
     background: #D9D9D9 ;
     border-radius: 8px;
     padding: 0.75rem;
     cursor: pointer;
-  }
+  } */
 `
 
 export const NavMenu = styled.nav`
-  margin-top: 2rem;
+  margin-top: 3rem;
   width: 80%;
   border-radius: 8px;
   color: #0F076D;
