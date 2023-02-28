@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
+
+export const ContainerClient = styled.main`
+  display: flex;
+  justify-content: space-between;
+  
+`
+
 export const ClienteConteiner = styled.main`
-  width: 500px;
+  min-width: 500px;
   left: 0;
   height: 100vh;
   padding-top: 3rem;
@@ -67,21 +74,33 @@ export const NavMenu = styled.nav`
     gap: 1rem;
     
     li {
-      padding: 0.5rem 1rem;
+      width: 100%;
       border-radius: 8px;
       background: #D9D9D9 ;
       color: #0F076D;
       font-weight: 500;
       cursor: pointer;
+      overflow: hidden;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      padding: 0.5rem 1rem;
     }
   }
 `
 
 export const ButtonExit = styled.button`
-  padding: 1rem 3rem;
   align-self: start;
   margin-left: 10%;
-
+  
   border-radius: 10px;
   border: none;
+
+  overflow: hidden;
+  
+  a {
+    padding: 1rem 3rem;
+    display: inline-block;
+  }
 `

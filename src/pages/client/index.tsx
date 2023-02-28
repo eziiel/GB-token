@@ -1,37 +1,60 @@
 import React from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
 import { SelectPlan } from '../../assets/SelectPlan/selectPlan'
 import * as S from './styled'
 
 
 export const Client = () => {
   return (
-    <S.ClienteConteiner>
-      <S.ClientInfo>
-        <h1>Minha Conta</h1>
+    <S.ContainerClient>
 
-        <div>
-          <span>Nome:</span>
-          <span>Endereço:</span>
-          <span>Cidade:</span>
-        </div>
-      </S.ClientInfo>
+      <S.ClienteConteiner>
+        <S.ClientInfo>
+          <h1>Minha Conta</h1>
 
-      <S.PlanClient>
-        <h2>Planos:</h2>
+          <div>
+            <span>Nome:</span>
+            <span>Endereço:</span>
+            <span>Cidade:</span>
+          </div>
+        </S.ClientInfo>
 
-        <SelectPlan />
-      </S.PlanClient>
+        <S.PlanClient>
+          <h2>Planos:</h2>
 
-      <S.NavMenu>
-        <ul>
-          <li>Extratos Financeiros</li>
-          <li>Boletos</li>
-          <li>Notas Fiscais</li>
-          <li>Atendimentos</li>
-        </ul>
-      </S.NavMenu>
+          <SelectPlan />
+        </S.PlanClient>
 
-      <S.ButtonExit> Sair </S.ButtonExit>
-    </S.ClienteConteiner>
+        <S.NavMenu>
+          <ul>
+            <li>
+              <NavLink to='extratosfinanceiros'>
+                Extratos Financeiros
+              </NavLink> 
+            </li>
+            <li>
+              <NavLink to='boletos'>
+                Boletos
+              </NavLink> 
+            </li>
+            <li>
+              <NavLink to='notasfiscais'>
+                Notas Fiscais
+              </NavLink> 
+            </li>
+            <li>
+              <NavLink to='atendimentos'>
+                Atendimentos
+              </NavLink> 
+            </li>
+          </ul>
+        </S.NavMenu>
+
+        <S.ButtonExit> 
+          <NavLink to='/'>Sair</NavLink>
+        </S.ButtonExit>
+      </S.ClienteConteiner>
+      <Outlet />
+    </S.ContainerClient>
   )
 }
