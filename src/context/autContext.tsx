@@ -50,6 +50,8 @@ type AuthContextData = {
   signIn(credentials: SignInCredentials): Promise<void> 
   isAuthenticated: boolean
   dataClient: DataUser | []
+  errorAccess: boolean
+  changeErrorAccess: () => void
 }
 
 type AuthProviderProps = {
@@ -60,6 +62,7 @@ export const AuthContext = React.createContext({} as AuthContextData)
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [dataClient, setDataClient] = React.useState<DataUser | []>([])
+  const [errorAccess, setErrorAccess] = React.useState<boolean>(false)
   const isAuthenticated = false  
   const navigate = useNavigate()
 
@@ -72,14 +75,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
         setDataClient(response)
         navigate("/client")
       }
+      setErrorAccess(false)
     } catch(error) {
-      console.log(error)
+      setErrorAccess(true)
     }
   }
 
+  const changeErrorAccess = () => {
+    setErrorAccess(false)
+  }
 
   return (
-    <AuthContext.Provider value={{ signIn, isAuthenticated, dataClient}}>
+    <AuthContext.Provider value={{ signIn, isAuthenticated, dataClient, errorAccess, changeErrorAccess}}>
       {children}
     </AuthContext.Provider>
   )

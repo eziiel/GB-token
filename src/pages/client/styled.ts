@@ -68,7 +68,7 @@ export const NavMenu = styled.nav`
 
   ul {
     border-radius: 8px;
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -76,16 +76,29 @@ export const NavMenu = styled.nav`
     li {
       width: 100%;
       border-radius: 8px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: 0.2s ease-in-out;
+
+      
+      .active {
+        width: 100%;
+        background: red;
+        color: #fff;
+        text-align: center;
+      }
+    }
+    
+    a {
+      display: inline-block;
+      width: 60%;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: 0.2s ease-in-out;
+
       background: #D9D9D9 ;
       color: #0F076D;
       font-weight: 500;
-      cursor: pointer;
-      overflow: hidden;
-    }
-    a {
-      display: inline-block;
-      width: 100%;
-      padding: 0.5rem 1rem;
     }
   }
 `
