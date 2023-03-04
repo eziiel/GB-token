@@ -1,7 +1,14 @@
 import React from 'react'
+import { ErroAccess } from './styled'
 
-export const ErroLogin = () => {
+interface Error{
+  errorAccess: boolean
+}
+export const ErroLogin = ({errorAccess}:Error) => {
+
   return (
-    <div>login ou senha incorretos</div>
+    <ErroAccess>
+      {errorAccess ?'Usuário ou senha incorretos!' : ' '} 
+    </ErroAccess>
   )
 }

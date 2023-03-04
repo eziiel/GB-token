@@ -18,6 +18,8 @@ export const HomeForm = styled.form`
   height: 400px;
   border-radius: 10px;
 
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: 2rem;
