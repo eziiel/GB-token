@@ -6,21 +6,39 @@ export const KeyboardContent = styled.div`
   background: red;
   position: absolute;
 
-  left: 110%;
+  left: 480px;
 
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 
   border-radius: 10px;
 
-  padding: 2rem;
+  padding: 1rem;
 
-  span {
-    padding: 0.5rem;
-    background: blue;
-    cursor: pointer;
-  }
 `
+export const LettersContent = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+
+  flex: 1;
+
+  gap: 1rem;
+` 
+export const Letters = styled.span`
+    /* padding: 0.5rem; */
+    width: 30px;
+    height: 30px;
+    background: blue;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    cursor: pointer;
+    border-radius: 6px;
+` 
