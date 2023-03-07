@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, TouchEventHandler } from "react"
 import { AuthContext } from "../../context/autContext"
-import { HomeAccess, HomeForm } from "./styled"
+import { HomeAccess, HomeContainer, HomeForm, HomeImage, HomeImageContent } from "./styled"
 import { useNavigate } from "react-router-dom";
 import { ErroLogin } from "../../components/erroLogin";
 import { KeyBoard } from "../../components/keyboard";
@@ -37,39 +37,46 @@ export const Access = () => {
   }
 
   return (
-    <HomeAccess> 
-      <HomeForm onSubmit={HandleSubmit}>  
-        <h1>Acessar minha conta</h1>
+    <HomeContainer>
+      
+      <HomeAccess> 
+        <HomeForm onSubmit={HandleSubmit} position={keyBoardLogin}>  
+          <h1>Acessar minha conta</h1>
 
-        <ErroLogin errorAccess= {errorAccess}/>
-        <input 
-          onClick={setKeyBoardFild}
-          type="text" 
-          placeholder="CPF ou CNPJ" 
-          onChange={e => {
-            setLogin(e.target.value)
-            changeErrorAccess()
-          }}
-          value={login}
-          />
-        <input 
-          onClick={setKeyBoardFild}
-          type="password" 
-          placeholder="SENHA" 
-          onChange={e => {
-            setPassword(e.target.value)
-            changeErrorAccess()
-          }}
-          value={password}/>
+          <ErroLogin errorAccess= {errorAccess}/>
+          <input 
+            onClick={setKeyBoardFild}
+            type="text" 
+            placeholder="CPF ou CNPJ" 
+            onChange={e => {
+              setLogin(e.target.value)
+              changeErrorAccess()
+            }}
+            value={login}
+            />
+          <input 
+            onClick={setKeyBoardFild}
+            type="password" 
+            placeholder="SENHA" 
+            onChange={e => {
+              setPassword(e.target.value)
+              changeErrorAccess()
+            }}
+            value={password}/>
 
-        <button 
-          type="submit" 
-          onClick={() => setKeyBoardLogin(false)}
-        > Entrar </button>
+          <button 
+            type="submit" 
+            onClick={() => setKeyBoardLogin(false)}
+          > Entrar </button>
 
+          
+        </HomeForm>
+          {keyBoardLogin && <KeyBoard setLoginKeyBoard={setLoginKeyBoard} />}
+      </HomeAccess>
         
-      </HomeForm>
-        {keyBoardLogin && <KeyBoard setLoginKeyBoard={setLoginKeyBoard} />}
-    </HomeAccess>
+      <HomeImageContent>
+        <HomeImage /> 
+      </HomeImageContent>
+    </HomeContainer>
   )
 }
