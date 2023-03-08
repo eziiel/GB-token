@@ -38,8 +38,8 @@ export const LettersContent = styled.div`
   gap: 0.5rem;
 ` 
 export const Letters = styled.span`
-    width: 22px;
-    height: 22px;
+    width: 20.5px;
+    height: 20.5px;
     background: ${props => props.theme['white-100']};
     color: ${props => props.theme['blue-800']};
     font-weight: 500;
