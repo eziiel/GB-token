@@ -11,7 +11,7 @@ export const KeyboardContent = styled.div<PropsKeyboard>`
 
   position: absolute;
 
-  left: 30%;
+  left: 40%;
   
   
   display: flex;
