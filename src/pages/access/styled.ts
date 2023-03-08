@@ -38,7 +38,7 @@ export const HomeImage = styled.div`
 `
 
 export const HomeForm = styled.form<PropsForm>`
-  width: 85%;
+  width: 80%;
   height: 400px;
   border-radius: 10px;
 
