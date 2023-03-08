@@ -23,7 +23,7 @@ export const Access = () => {
   }
 
 
-  const setLoginKeyBoard = (letter: string) => {
+  const setLettersKeyBoard = (letter: string) => {
     if(fields === 'login') {
       setLogin(previus => previus+letter)
     } else if(fields==='password') {
@@ -34,6 +34,15 @@ export const Access = () => {
   const setKeyBoardFild = (event:any) => {
     setKeyBoardLogin(true)
     setFields(state => state == 'login'?'password':'login')
+  }
+
+  const SetLettersRemove = () => {
+    if(fields==='login') { 
+      let word = login.slice(0,-1)
+      setLogin(word)
+    } else if(fields==='password') {
+      setPassword('')
+    }
   }
 
   return (
@@ -71,7 +80,11 @@ export const Access = () => {
 
           
         </HomeForm>
-          {keyBoardLogin && <KeyBoard setLoginKeyBoard={setLoginKeyBoard} />}
+          {keyBoardLogin && <KeyBoard 
+            setLettersKeyBoard={setLettersKeyBoard} 
+            SetLettersRemove={SetLettersRemove}
+            keyBoardLogin={keyBoardLogin}
+          />}
       </HomeAccess>
         
       <HomeImageContent>

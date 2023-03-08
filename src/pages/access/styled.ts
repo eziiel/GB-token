@@ -54,12 +54,12 @@ export const HomeForm = styled.form<PropsForm>`
   transition: 0.3s ease-in-out ;
 
   ${props => props.position && css`
-    margin-left: -35rem;
+    margin-left: -50%;
   `}
 
   h1 {
     padding-bottom: 1rem;
-    color: #111;
+    color: ${props => props.theme['blue-500']};
   }
   
   input {
@@ -67,7 +67,7 @@ export const HomeForm = styled.form<PropsForm>`
     padding: 0.5rem;
 
     border: none;
-    border-bottom: 2px solid #254ACD;
+    border-bottom: 1px solid ${props => props.theme['blue-01']};
 
     :focus {
       outline: none;
@@ -79,11 +79,18 @@ export const HomeForm = styled.form<PropsForm>`
     cursor: pointer;
     margin-top: 2rem;
     padding: 0.5rem 3rem;
-  
-    border: none;
+    width: 300px;
 
+    border: none;
+    background: ${props => props.theme['blue-01']};
+    color: ${props => props.theme['white']};
 
     border-radius: 10px;
     font-size: 1.5rem;
+
+    :hover {
+      background: #3861F5;
+      color: #fff;
+    }
   }
 `

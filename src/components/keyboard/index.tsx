@@ -1,40 +1,52 @@
 import React from 'react'
-import { KeyboardContent, Letters, LettersContent } from './styled'
+import { KeyboardContent, Letters, LettersButtons, LettersContent } from './styled'
 
 interface PropsKeyboard {
-  setLoginKeyBoard : (letter:string) => void
+  setLettersKeyBoard : (letter:string) => void
+  SetLettersRemove : () => void
+  keyBoardLogin: boolean
 }
 
-interface PropsLetter {
-  letter : 'min' | 'mas' | 'car1' | 'car2'
-}
 
-export const KeyBoard = ({ setLoginKeyBoard }: PropsKeyboard) => {
-  const [letterMarkup, setLetterMarkup] = React.useState(1)
-  const LetterKeyBoard = (letter:string) => setLoginKeyBoard(letter)
+export const KeyBoard = ({ setLettersKeyBoard, SetLettersRemove, keyBoardLogin }: PropsKeyboard) => {
+  const [letterMarkup, setLetterMarkup] = React.useState<'min'|'max'>('min')
+  const LetterKeyBoard = (letter:string) => setLettersKeyBoard(letter)
   let alf: number[] = []
-  
-    let letterDate = [
-        [97, 122],
-        [65, 90],
-        [33, 64],
-        [91,95],
-    ]
+  let numbers: number[] = []
+
+    let letterDate = {
+      min: [97, 122],
+      max: [65, 90],
+    }
+
     for(let a= letterDate[letterMarkup][0]; a<=letterDate[letterMarkup][1];a++) {
         alf.push(a)
     }
+    for(let a= 48; a<=57;a++) {
+        numbers.push(a)
+    }
 
   const setLetterInd = () => {
-    setLetterMarkup((letterMarkup) => {
-      if(letterMarkup === 3) {
-        return 0
-      } else return letterMarkup + 1
-    })
+    setLetterMarkup(
+      letterMarkup === 'min'? 'max' : 'min'
+    )
+  }
+
+  const handleSetLetterRemove = () => {
+    SetLettersRemove()
   }
 
   return (
-    <KeyboardContent>
+    <KeyboardContent keyBoardLogin= {keyBoardLogin} >
       <LettersContent>
+        {numbers.map((item) => (
+          <Letters 
+          key={item}
+            onClick={() => LetterKeyBoard(String.fromCodePoint(item))}
+            >
+              {String.fromCodePoint(item)}
+          </Letters>
+        ))}
         {alf.map((item) => 
             <Letters 
             key={item}
@@ -44,8 +56,12 @@ export const KeyBoard = ({ setLoginKeyBoard }: PropsKeyboard) => {
             </Letters>
         )}
       </LettersContent>
+        
+      <LettersButtons>
+        <button onClick={setLetterInd}> ↑ </button>
+        <button onClick={handleSetLetterRemove}> apagar </button>
+      </LettersButtons>
 
-      <button onClick={setLetterInd}> ↑ </button>
 
     </KeyboardContent>
   )
