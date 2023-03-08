@@ -5,7 +5,7 @@ interface PropsKeyboard {
 }
 
 export const KeyboardContent = styled.div<PropsKeyboard>`
-  width: 500px;
+  width: 320px;
   /* height: 300px; */
   background: linear-gradient(135deg, #254ACD, #254ACD, #5C7DD2 );
 
@@ -20,11 +20,11 @@ export const KeyboardContent = styled.div<PropsKeyboard>`
   justify-content: space-between;
   
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1rem;
   transition: 0.7s ease-in-out;
   
   ${props => props.keyBoardLogin && css`
-    left: 23%;
+    left: 25%;
   `}
 `
 export const LettersContent = styled.div`
@@ -35,15 +35,16 @@ export const LettersContent = styled.div`
 
   flex: 1;
 
-  gap: 1rem;
+  gap: 0.5rem;
 ` 
 export const Letters = styled.span`
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background: ${props => props.theme['white-100']};
     color: ${props => props.theme['blue-800']};
     font-weight: 500;
-    
+    font-size: 0.875rem;
+
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
