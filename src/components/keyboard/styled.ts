@@ -15,7 +15,7 @@ export const KeyboardContent = styled.div<PropsKeyboard>`
   
   
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   flex-direction: column;
   justify-content: space-between;
   
@@ -54,13 +54,22 @@ export const Letters = styled.span`
     border-radius: 6px;
 ` 
 
+export const NumbersContent = styled(LettersContent)`
+
+`
+
+
 export const LettersButtons = styled.div`
   display: flex;
   width: 100%;
+  margin-top: 1rem;
 
   justify-content: center;
   gap: 5rem;
+  border-top: 1px solid ${props => props.theme['white-01']};
 
+  padding-top: 1rem;
+  
   
   button {
     padding: 0.5rem 2rem;

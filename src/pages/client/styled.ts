@@ -4,22 +4,24 @@ import styled from "styled-components";
 export const ContainerClient = styled.main`
   display: flex;
   justify-content: space-between;
+  height: 100vh;
   
 `
 
 export const ClienteConteiner = styled.main`
-  min-width: 500px;
+  min-width: 30%;
   left: 0;
-  height: 100vh;
-  padding-top: 3rem;
+  margin: 2rem;
+  padding: 2rem;
 
   background: linear-gradient(135deg, #254ACD, #5C7DD2 );
-
 
   display: flex;
   gap: 3rem;
   flex-direction: column;
   align-items: center;
+
+  border-radius: 50px;
 `
 
 export const ClientInfo = styled.section`
@@ -30,7 +32,7 @@ export const ClientInfo = styled.section`
   padding:  2rem;
   background-color: #255bda;
 
-  border-radius: 10px;
+  border-radius: 20px;
   width: 80%;
   height: 230px;
 
@@ -51,13 +53,6 @@ export const PlanClient = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: top;
-
-  /* button {
-    background: #D9D9D9 ;
-    border-radius: 8px;
-    padding: 0.75rem;
-    cursor: pointer;
-  } */
 `
 
 export const NavMenu = styled.nav`
@@ -83,8 +78,10 @@ export const NavMenu = styled.nav`
       
       .active {
         width: 100%;
-        background: red;
-        color: #fff;
+        
+        color: ${props => props.theme['white-100']};
+        background: ${props => props.theme['blue-600']};
+
         text-align: center;
       }
     }
@@ -97,7 +94,7 @@ export const NavMenu = styled.nav`
       transition: 0.2s ease-in-out;
 
       background: #D9D9D9 ;
-      color: #0F076D;
+      color: ${props => props.theme['blue-600']};
       font-weight: 500;
     }
   }
@@ -112,8 +109,20 @@ export const ButtonExit = styled.button`
 
   overflow: hidden;
   
+  :hover {
+    background: ${props => props.theme['blue-600']};
+  }
+
   a {
     padding: 1rem 3rem;
     display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: ${props => props.theme['blue-600']};
+
+    :hover {
+    color: ${props => props.theme['white-100']};
+  }
   }
 `

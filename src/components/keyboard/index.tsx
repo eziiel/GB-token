@@ -1,5 +1,6 @@
 import React from 'react'
-import { KeyboardContent, Letters, LettersButtons, LettersContent } from './styled'
+import { KeyboardContent, Letters, LettersButtons, LettersContent, NumbersContent } from './styled'
+import { ArrowsDownUp } from 'phosphor-react'
 
 interface PropsKeyboard {
   setLettersKeyBoard : (letter:string) => void
@@ -38,15 +39,17 @@ export const KeyBoard = ({ setLettersKeyBoard, SetLettersRemove, keyBoardLogin }
 
   return (
     <KeyboardContent keyBoardLogin= {keyBoardLogin} >
-      <LettersContent>
+      <NumbersContent>
         {numbers.map((item) => (
           <Letters 
           key={item}
-            onClick={() => LetterKeyBoard(String.fromCodePoint(item))}
-            >
+          onClick={() => LetterKeyBoard(String.fromCodePoint(item))}
+          >
               {String.fromCodePoint(item)}
           </Letters>
         ))}
+      </NumbersContent>
+      <LettersContent>
         {alf.map((item) => 
             <Letters 
             key={item}
@@ -58,8 +61,10 @@ export const KeyBoard = ({ setLettersKeyBoard, SetLettersRemove, keyBoardLogin }
       </LettersContent>
         
       <LettersButtons>
-        <button onClick={setLetterInd}> ↑ </button>
-        <button onClick={handleSetLetterRemove}> apagar </button>
+        <button onClick={setLetterInd}>
+         <ArrowsDownUp size={18} weight='bold'/>
+        </button>
+        <button onClick={handleSetLetterRemove}> Apagar </button>
       </LettersButtons>
 
 

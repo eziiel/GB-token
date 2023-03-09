@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AtendimentosContainer = styled.main`
-  background: red;
+  color: red;
 
   display: flex;
   justify-content: center;

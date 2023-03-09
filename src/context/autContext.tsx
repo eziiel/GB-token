@@ -68,17 +68,17 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   async function signIn({ login, password}: SignInCredentials) {
 
-    try{
-      const response = await (await api.get(`clients?login.access=${login}`)).data
+    // try{
+    //   const response = await (await api.get(`clients?login.access=${login}`)).data
 
-      if(response[0].login.senha === password) {
-        setDataClient(response)
+    //   if(response[0].login.senha === password) {
+    //     setDataClient(response)
         navigate("/client")
-      }
-      setErrorAccess(false)
-    } catch(error) {
-      setErrorAccess(true)
-    }
+    //   }
+    //   setErrorAccess(false)
+    // } catch(error) {
+    //   setErrorAccess(true)
+    // }
   }
 
   const changeErrorAccess = () => {
