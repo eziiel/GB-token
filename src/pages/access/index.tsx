@@ -1,6 +1,6 @@
 import React, { MouseEventHandler, TouchEventHandler } from "react"
 import { AuthContext } from "../../context/autContext"
-import { HomeAccess, HomeContainer, HomeForm, HomeImage, HomeImageContent } from "./styled"
+import { HomeAccess, HomeContainer, HomeForm, HomeImageContent } from "./styled"
 import { useNavigate } from "react-router-dom";
 import { ErroLogin } from "../../components/erroLogin";
 import { KeyBoard } from "../../components/keyboard";
