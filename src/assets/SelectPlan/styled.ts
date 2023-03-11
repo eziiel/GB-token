@@ -9,10 +9,10 @@ export const Root = styled(Select.Root)`
 
 export const Trigger = styled(Select.Trigger)`
 
-  width: 350px;
+  width: 300px;
   background: #D9D9D9 ;
   border-radius: 8px;
-  padding: 0.75rem;
+  padding: 0.5rem;
   cursor: pointer;
 `
 
