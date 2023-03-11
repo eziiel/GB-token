@@ -52,6 +52,12 @@ export const Letters = styled.span`
     
     cursor: pointer;
     border-radius: 6px;
+
+    :hover {
+      background: #3861F5;
+      color: #fff;
+      box-shadow: 0 0 20px 1px ${props => props.theme['blue-200']};
+    }
 ` 
 
 export const NumbersContent = styled(LettersContent)`

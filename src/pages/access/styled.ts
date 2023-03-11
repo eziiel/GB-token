@@ -23,18 +23,16 @@ export const HomeAccess = styled.div`
 `
 
 export const HomeImageContent = styled.div`
-  padding: 2rem;
   width: 50%;
-  height: 100%;
-`
-
-export const HomeImage = styled.div`
-  flex: 1;
-  background: linear-gradient(135deg, #254ACD, #5C7DD2 );
-
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
+  margin: 2rem;
+  object-fit: cover;
+  
+  display: flex;
+  justify-content: center;
+  
   border-radius: 50px;
+  box-shadow: 0 0 30px 4px ${props => props.theme['blue-200']};
 `
 
 export const HomeForm = styled.form<PropsForm>`
@@ -91,6 +89,7 @@ export const HomeForm = styled.form<PropsForm>`
     :hover {
       background: #3861F5;
       color: #fff;
+      box-shadow: 0 0 20px 1px ${props => props.theme['blue-200']};
     }
   }
 `

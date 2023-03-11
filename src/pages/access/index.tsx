@@ -4,6 +4,8 @@ import { HomeAccess, HomeContainer, HomeForm, HomeImage, HomeImageContent } from
 import { useNavigate } from "react-router-dom";
 import { ErroLogin } from "../../components/erroLogin";
 import { KeyBoard } from "../../components/keyboard";
+import Slider from "./components/slider";
+
 
 export const Access = () => {
   const { signIn, errorAccess, changeErrorAccess } = React.useContext(AuthContext)
@@ -88,7 +90,7 @@ export const Access = () => {
       </HomeAccess>
         
       <HomeImageContent>
-        <HomeImage /> 
+         <Slider />
       </HomeImageContent>
     </HomeContainer>
   )
